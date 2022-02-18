@@ -15,7 +15,7 @@ UDP endpoint blocking is probably cheap for censors as it does not require Deep 
 
 **How to detect it**<br/>
 
-<img src="images/detect_udp_endpoint_blocking.png" alt="decision tree udp endpoint blocking" width="50%"/>
+<img src="images/detect_udp_endpoint_blocking_quer.png" alt="decision tree udp endpoint blocking"/>
 
 **Oberserved in**<br/>
 Iran, 2021
