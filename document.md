@@ -17,17 +17,12 @@ UDP endpoint blocking is probably cheap for censors as it does not require Deep 
 
 <img src="images/detect_udp_endpoint_blocking_quer.png" alt="decision tree udp endpoint blocking"/>
 
+UDP endpoint blocking on itself looks like IP endpoint blocking since both blocking methods are not affected by application layer tampering (e.g. SNI manipulation). Running tests on other protocols helps differentiate the blocking method. <br/>
+
 **Oberserved in**<br/>
-Iran, 2021
+Iran, 2021 <br/>
+India, 2022
 
-**Circumvention approaches**<br/>
-Connection migration feature.
-
-
-## SNI blocking
-
-
-**Observed in**<br/>
-
-
+**Circumvention approaches**
+Connection migration &rarr; Probably not an option because QUIC expects the paths to stay the same during the handshake and the blocking usually already happens during handshake.
 
