@@ -1,3 +1,5 @@
+# Documentation on HTTP/3 Censorship Methods
+
 This document contains observed cases of QUIC and HTTP/3 censorship in various countries.
 
 Censoring QUIC proofs that censors are continously adapting and improving their censorship methodologies with the aim to block unwanted website traffic in the most comprehensive way.

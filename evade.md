@@ -1,3 +1,5 @@
+# HTTP/3 and QUIC Censorship Circumvention
+
 This document examines the specific properties of the QUIC protocol in regards to censorship circumvention and evaluates the applicability of existing evasion building blocks to QUIC.
 
 ## Potential pitfalls for QUIC censors and how to exploit them
