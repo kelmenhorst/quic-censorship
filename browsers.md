@@ -1,4 +1,5 @@
 # How to test HTTP/3 in browsers
+**Status of this memo: 24.02.2022**<br/> <br/>
 Firefox and Chrome/Chromium browsers have added HTTP/3 support by default in 2020/2021. In order to discover that a given server runs HTTP/3, the browsers usually start with a "normal" HTTPS (TCP) request first: If the ```Alt-Svc``` (alternative service) header of the HTTP reply contains ```h3```, the browser proceeds by requesting the website over HTTP/3. **Important: This mechanism will not work if your network censors the first HTTPS (TCP) request.** However, there are some (not so practical) ways to force your browser to just use HTTP/3, without having to run HTTPS (TCP) before:
 
 ## Firefox
