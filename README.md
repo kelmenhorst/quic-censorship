@@ -1,5 +1,7 @@
 # quic-censorship
 
-[A documentation of observed QUIC and HTTP/3 censorship.](document.md)
+[A Documentation of Observed QUIC and HTTP/3 Censorship.](document.md)
 
-[Research and approaches for QUIC censorship circumvention strategies.](evade.md)
+[Research and Approaches for QUIC Censorship Circumvention Strategies.](evade.md)
+
+[How to Test HTTP/3 in Browsers](browsers.md)
