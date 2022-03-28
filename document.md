@@ -28,11 +28,7 @@ UDP endpoint blocking on itself looks like IP endpoint blocking since both block
 **Oberserved in**<br/>
 Iran, 2021 <br/>
 India, 2022 (AS38266)
-
-**Circumvention approaches**<br/>
-Unlike TCP, QUIC connections are not bound to a specific network path and IP address. Rather, connections are identified by connection IDs and clients can change IP addresses mid-connection. 
-
-While it is definitely worthwile to explore the potentials of this connection migration feature in terms of censorship circumvention, it is unlikely that it can be used to evade strict IP or UDP endpoint blocking: QUIC expects the paths to stay the same during the handshake and the blocking usually already happens during the handshake.
+...
 
 ### 1.2. QUIC SNI blocking (TLS censorship)
 
