@@ -42,7 +42,7 @@ Other packet-level actions that have been used in TCP censorship evasion strateg
 
 Duplicating UDP datagrams can be a sensible censorship evasion building block when applied against stateful censors that forget a connection after having blackholed the first UDP datagram. <br/>
 
-Dropping incoming UDP datagrams is an inbound building block that can also be applied to QUIC traffic, however, there is no known attack vector similar to TCP RST. This means that as of now, there is no known way how a censor could terminate a QUIC connection by injecting a packet. <br/>
+Dropping incoming UDP datagrams is an inbound building block that can also be applied to QUIC traffic, however, there is no known attack vector similar to TCP RST. This means that as of now, there is no known way how a censor could terminate a QUIC connection by [injecting a packet](document.md#23-a-word-on-packet-injection). <br/>
 
 ### QUIC packet level
 *duplicate* can also be applied to QUIC traffic on the QUIC packet level. This action would copy a given QUIC packet and send it in the same or a new UDP datagram. (QUIC packets are handled by the receiving peer as if they were received in separate datagrams.) <br/>
