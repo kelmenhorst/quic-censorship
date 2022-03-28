@@ -55,7 +55,7 @@ India, 2022 (AS133694) <br/>
 
 QUIC-SNI blocking has very rarely been recorded by OONI data so far (March 23, 2022). In most networks where censors use SNI-blocking for TCP-based HTTPS, HTTP/3 is not blocked or blocked via IP/[UDP endpoint blocking](#11-udp-endpoint-blocking). These findings might confirm that it is not trivial for censors to apply the same SNI strategy to QUIC traffic because of its Initial protection.
 
-However, starting March 4, 2022, there have been reports from Russia saying that the SNI was used in some networks to filter HTTP/3 traffic (https://ntc.party/t/http-3-quic/1823, https://github.com/net4people/bbs/issues/108). I was unable to find a vantage point in Russia but further research needs to investigate how Russia censors HTTP/3. 
+However, starting March 4, 2022, there have been reports from Russia saying that the SNI was used in some networks to filter HTTP/3 traffic (https://ntc.party/t/http-3-quic/1823, https://github.com/net4people/bbs/issues/108). Further research needs to investigate how Russia censors HTTP/3.
 
 
 ## 2. Interference methods
@@ -93,7 +93,7 @@ Uganda, 2021 <br/>
 Uganda, 2022
 
 ### 2.3. A word on packet injection
-OONI data has not confirmed any HTTP/3 interference method other than timeouts. Specifically, I have not noticed any injected packets causing the QUIC connection or handshake to terminate immediately. 
+OONI data has not confirmed any HTTP/3 interference method other than timeouts. Specifically,there was no injected packets causing the QUIC connection or handshake to terminate immediately. 
 
 Injecting packets unnoticed seems difficult to do when you have a closer look at the [RFC](). This is in contrast to TCP where TCP RST packets can be easily injected by a censor that can roughly guess the current packet number. For QUIC, connection termination frames are encrypted and stateless resets have more security mechanisms than TCP RSTs: The stateless reset packet contains a token that is hard to guess and calculated from the connection ID and a static key, for each endpoint respectively. An endpoint only accepts a stateless reset if the reset token matches the agreed-upon token.
 
