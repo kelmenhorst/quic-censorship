@@ -26,7 +26,8 @@ As with TLS over TCP traffic, SNI blocking of QUIC should be avoidable by changi
 
 ## Packet-level circumvention building blocks
 Automated censorship evasion discovery based on packet- or property-level building blocks ([e.g. Geneva](https://geneva.cs.umd.edu/papers/geneva_ccs19.pdf)) is a promising new approach for censorship evasion.
-This section demonstrates which previously used packet-level building blocks can be applied to QUIC, keeping in mind the specific properties of the protocol. As QUIC packets travel in UPD datagrams packet-level operations are also considered.<br/>
+This section demonstrates which previously used packet-level building blocks can be applied to QUIC, keeping in mind the specific properties of the protocol. As QUIC packets travel in UPD datagrams packet-level operations are also considered.
+Whether circumvention is more promising on the UDP or QUIC layer depends among others on the layer the censor is working on. <br/>
 
 For context, Geneva proposed the following packet-level building blocks for TCP:
 1. *duplicate*: copy a TCP packet
