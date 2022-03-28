@@ -93,7 +93,7 @@ Uganda, 2021 <br/>
 Uganda, 2022
 
 ### 2.3. A word on packet injection
-OONI data has not confirmed any HTTP/3 interference method other than timeouts. Specifically,there was no injected packets causing the QUIC connection or handshake to terminate immediately. 
+OONI data has not confirmed any HTTP/3 interference method other than timeouts. Specifically, there was no injected packets causing the QUIC connection or handshake to terminate immediately. 
 
 Injecting packets unnoticed seems difficult to do when you have a closer look at the [RFC](). This is in contrast to TCP where TCP RST packets can be easily injected by a censor that can roughly guess the current packet number. For QUIC, connection termination frames are encrypted and stateless resets have more security mechanisms than TCP RSTs: The stateless reset packet contains a token that is hard to guess and calculated from the connection ID and a static key, for each endpoint respectively. An endpoint only accepts a stateless reset if the reset token matches the agreed-upon token.
 
