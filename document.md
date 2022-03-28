@@ -53,13 +53,13 @@ As done [here](https://ooni.org/post/2020-tls-blocking-india/), it is useful to 
 **Oberserved in**<br/>
 India, 2022 (AS133694) <br/>
 
-QUIC-SNI blocking has not been recorded by OONI data so far (March 23, 2022). Not even in networks where censors use SNI-blocking for TCP-based HTTPS. These findings might confirm that it is not trivial for censors to apply the same strategy to QUIC traffic because of its Initial protection.
+QUIC-SNI blocking has very rarely been recorded by OONI data so far (March 23, 2022). In most networks where censors use SNI-blocking for TCP-based HTTPS, HTTP/3 is not blocked or blocked via IP/[UDP endpoint blocking](#11-udp-endpoint-blocking). These findings might confirm that it is not trivial for censors to apply the same SNI strategy to QUIC traffic because of its Initial protection.
 
 However, starting March 4, 2022, there have been reports from Russia saying that the SNI was used in some networks to filter HTTP/3 traffic (https://ntc.party/t/http-3-quic/1823, https://github.com/net4people/bbs/issues/108). I was unable to find a vantage point in Russia but further research needs to investigate how Russia censors HTTP/3. 
 
 
 ## 2. Interference methods
-Interference methods are means to block or impair connections that have been [identified](#identification-methods) to be policy-offending.
+Interference methods are means to block or impair connections that have been [identified](#1-identification-methods) to be policy-offending.
 
 ### 2.1. Dropping Initial packets - Handshake timeout
 **What is it?**</br>
