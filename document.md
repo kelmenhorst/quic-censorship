@@ -55,7 +55,7 @@ India, 2022 (AS133694) <br/>
 
 QUIC-SNI blocking has very rarely been recorded by OONI data so far (March 23, 2022). In most networks where censors use SNI-blocking for TCP-based HTTPS, HTTP/3 is not blocked or blocked via IP/[UDP endpoint blocking](#11-udp-endpoint-blocking). These findings might confirm that it is not trivial for censors to apply the same SNI strategy to QUIC traffic because of its Initial protection.
 
-However, starting March 4, 2022, there have been reports from Russia saying that the SNI was used in some networks to filter HTTP/3 traffic (https://ntc.party/t/http-3-quic/1823, https://github.com/net4people/bbs/issues/108). Further research needs to investigate how Russia censors HTTP/3.
+However, starting March 4, 2022, there have been reports from Russia saying that the SNI was used in some networks to filter HTTP/3 traffic (https://ntc.party/t/http-3-quic/1823, https://github.com/net4people/bbs/issues/108). Further measurements are necessary to find out how Russia censors HTTP/3.
 
 
 ## 2. Interference methods
