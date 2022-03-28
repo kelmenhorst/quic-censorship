@@ -40,7 +40,7 @@ While TCP-based censorship evasion strategies have relied on fragmenting TCP pac
 
 Other packet-level actions that have been used in TCP censorship evasion strategies before, are *duplicate* and *drop*. <br/>
 
-Duplicating UDP datagrams can be a sensible censorship evasion building block when applied against stateful censors that forget a connection after having blackholed the first UDP datagram. (REF TO GENEVA visualization) <br/>
+Duplicating UDP datagrams can be a sensible censorship evasion building block when applied against stateful censors that forget a connection after having blackholed the first UDP datagram. <br/>
 
 Dropping incoming UDP datagrams is an inbound building block that can also be applied to QUIC traffic, however, there is no known attack vector similar to TCP RST. This means that as of now, there is no known way how a censor could terminate a QUIC connection by injecting a packet. <br/>
 
