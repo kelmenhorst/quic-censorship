@@ -32,7 +32,7 @@ For context, Geneva proposed the following packet-level building blocks for TCP:
 1. *duplicate*: copy a TCP packet
 2. *fragment*: fragments or segments an IP/TCP packet
 3. *tamper*: replaces or corrups certain fields of the TCP packet and recomputes checksums 
-4. *drop*: disregards an (incoming) packet
+4. *drop*: discards an (incoming) packet
 
 ### UDP packet level
 QUIC runs on top of UDP which means that QUIC packets travel in UDP datagrams. 
