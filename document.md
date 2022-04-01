@@ -5,7 +5,7 @@ This document contains observed methods of QUIC and HTTP/3 censorship in various
 In general, QUIC censorship proofs that censors are continuously adapting and improving their censorship methodologies with the aim to block unwanted website traffic in the *most comprehensive* way. 
 
 ## 1. Identification methods
-Identification refers to how the censor detects that traffic is directed towards a blacklisted website. This section describes UDP endpoint blocking and SNI blocking as possible HTTP/3 targeting identification methods. IP-blacklisting is not considered here, since it is not targeting HTTP/3 specifically but all IP-based protocol stacks.
+Identification refers to how the censor detects that traffic is directed towards a blacklisted website. This section describes UDP endpoint blocking and SNI blocking as possible HTTP/3 targeting identification methods. IP-blacklisting (as recorded in [China, 2022](https://github.com/kelmenhorst/quic-censorship/issues/1)) is not considered here, since it is not targeting HTTP/3 specifically but all IP-based protocol stacks.
 
 
 ### 1.1. UDP endpoint blocking
@@ -26,9 +26,10 @@ UDP endpoint blocking is probably cheap for censors as it does not require Deep 
 UDP endpoint blocking on itself looks like IP endpoint blocking since both blocking methods are not affected by application layer tampering (e.g. SNI manipulation). Running tests on other protocols helps differentiate the blocking method. <br/>
 
 **Oberserved in**<br/>
-Iran, 2021 <br/>
-India, 2022 (AS38266)
-...
+[Iran, 2021](https://censorbib.nymity.ch/#Elmenhorst2021a) <br/>
+[India, 2022](https://github.com/kelmenhorst/quic-censorship/issues/2)<br/>
+[Russia, 2022](https://github.com/kelmenhorst/quic-censorship/issues/4)<br/>
+[Uganda, 2022](https://github.com/kelmenhorst/quic-censorship/issues/3)<br/><br/>
 
 ### 1.2. QUIC SNI blocking (TLS censorship)
 
@@ -47,11 +48,9 @@ As done [here](https://ooni.org/post/2020-tls-blocking-india/), it is useful to 
 
 
 **Oberserved in**<br/>
-India, 2022 (AS133694) <br/>
+[Russia, 2022](https://github.com/kelmenhorst/quic-censorship/issues/4)<br/>
 
 QUIC-SNI blocking has very rarely been recorded by OONI data so far (March 23, 2022). In most networks where censors use SNI-blocking for TCP-based HTTPS, HTTP/3 is not blocked or blocked via IP/[UDP endpoint blocking](#11-udp-endpoint-blocking). These findings might confirm that it is not trivial for censors to apply the same SNI strategy to QUIC traffic because of its Initial protection.
-
-However, starting March 4, 2022, there have been reports from Russia saying that the SNI was used in some networks to filter HTTP/3 traffic (https://ntc.party/t/http-3-quic/1823, https://github.com/net4people/bbs/issues/108). Further measurements are necessary to find out how Russia censors HTTP/3.
 
 
 ## 2. Interference methods
@@ -69,8 +68,10 @@ Detectable in ```urlgetter``` measurement report: <br/>
 The resulting failure type is a QUIC handshake timeout (OONI: ```generic_timeout_error``` during handshake). In ```network_events``` there is usually not a single successful ```read_from``` operation indicating that the client never got a response from the QUIC server.
 
 **Oberserved in**<br/>
-Iran, 2021 <br/>
-...
+[Iran, 2021](https://censorbib.nymity.ch/#Elmenhorst2021a) <br/>
+[India, 2022](https://github.com/kelmenhorst/quic-censorship/issues/2)<br/>
+[Russia, 2022](https://github.com/kelmenhorst/quic-censorship/issues/4)<br/>
+[Uganda, 2022](https://github.com/kelmenhorst/quic-censorship/issues/3)<br/><br/>
 
 
 ### 2.2. Dropping connection data - Connection timeout
@@ -85,8 +86,8 @@ Detectable in ```urlgetter``` measurement report: <br/>
 The resulting failure type is a QUIC connection timeout (OONI: ```No recent network activity``` after handshake). There is a successful ```quic_handshake_done``` operation in ```network_events``` indicating that the connection was established sucessfully and often there are also a few successful ```read_from``` operations after the handshake before there is no further response from the server.
 
 **Oberserved in**<br/>
-Uganda, 2021 <br/>
-Uganda, 2022
+[Uganda, 2021](https://explorer.ooni.org/measurement/20210120T110408Z_urlgetter_UG_37075_n1_JMjNpbZBJHXcpKKA?input=https%3A%2F%2Ffacebook.com) <br/>
+[Uganda, 2022](https://github.com/kelmenhorst/quic-censorship/issues/3)<br/><br/>
 
 ### 2.3. A word on packet injection
 OONI data has not confirmed any HTTP/3 interference method other than timeouts. Specifically, there was no injected packets causing the QUIC connection or handshake to terminate immediately. 
