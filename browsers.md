@@ -11,8 +11,9 @@ If you want to force using HTTP/3 for certain hosts, there is a configuration op
 4. Select the Edit button on the right. 
 5. For each host that you want to force Firefox to use HTTP/3 on, add an entry: ```<host-name>;h3=":443";h3-29=":443"```. Entries are separated by commas.
     - Example: <br/> ```www.greenpeace.org;h3=":443";h3-29=":443",www.youtube.com;h3=":443";h3-29=":443"```
-6. Save, close the config page and restart Firefox.
-7. Type the address of the website in the URL bar (use the exact domain name specified in the configuration entry).
+6. If it is a self-signed certificate, also set `network.http.http3.disable_when_third_party_roots_found` to `false`. See [Firefox QUIC documentation](https://github.com/mozilla/neqo?tab=readme-ov-file#connect-with-firefox-to-local-neqo-server) for details.
+7. Save, close the config page and restart Firefox.
+8. Type the address of the website in the URL bar (use the exact domain name specified in the configuration entry).
 
 ## Chromium (Google Chrome)
 Chrome has HTTP/3 support enabled by default since version 87 (April 2020).
